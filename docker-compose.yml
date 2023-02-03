@@ -1,11 +1,9 @@
 version: "2.2"
 services:
-  tp-link-api-bridge:
+  sms-api:
     build: .
-    container_name: tp-link-api-bridge
-    volumes:
-      - ./config.json:/home/node/tp-link-modem-router-master/config.json
+    container_name: sms-api
     ports: 
       - "3000:3000"
     restart: unless-stopped
-    init: true
+    network_mode: "host"
