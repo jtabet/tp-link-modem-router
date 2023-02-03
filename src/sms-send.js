@@ -6,12 +6,7 @@ import minimist from 'minimist'
 import RouterClient from './routerClient.mjs'
 import { TP_ACT, TP_CONTROLLERS } from './routerProtocol.mjs'
 
-// change these values if you do not want to provide them as args
-// using the config.json file is recommended
-let routerUiUrl = 'http://192.168.1.1';
-let routerUiLogin = 'admin';
-let routerUiPassword = 'myrouterpassword';
-let configFilePath = 'config.json';
+const configFilePath = 'config.json';
 
 const argv = minimist(process.argv.slice(2), {
   string: '_', // prevent string to number conversion
@@ -36,7 +31,7 @@ try {
   routerUiLogin = config.login;
   routerUiPassword = config.password;
 } catch(exception) {
-  console.log('config file ' + configFilePath + ' could not be read, skipping')
+  console.error('config file ' + configFilePath + ' could not be read, skipping')
 }
 
 if (typeof argv['url'] !== 'undefined') {
