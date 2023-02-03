@@ -3,8 +3,8 @@
 
 import fs from 'fs'
 import minimist from 'minimist'
-import RouterClient from './src/routerClient.mjs'
-import { TP_ACT, TP_CONTROLLERS } from './src/routerProtocol.mjs'
+import RouterClient from './routerClient.mjs'
+import { TP_ACT, TP_CONTROLLERS } from './routerProtocol.mjs'
 
 // change these values if you do not want to provide them as args
 // using the config.json file is recommended

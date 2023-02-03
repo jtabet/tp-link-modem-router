@@ -5,7 +5,7 @@ import smtpServerLib from 'smtp-server';
 import mailparser from 'mailparser';
 import axiosBase from 'axios';
 import axiosRetry from 'axios-retry';
-import logger from './src/logger.mjs'
+import logger from './logger.mjs'
 
 const axios = axiosBase.create();
 

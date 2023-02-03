@@ -8,8 +8,8 @@ import swaggerJsdoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
 import expressBasicAuth from 'express-basic-auth'
 
-import RouterClient from './src/routerClient.mjs'
-import logger from './src/logger.mjs'
+import RouterClient from './routerClient.mjs'
+import logger from './logger.mjs'
 
 let configFilePath = './config.json';
 
@@ -40,8 +40,8 @@ app.use(nocache());
 app.set('router_client', client);
 app.disable('x-powered-by');
 
-import smsRoutes from './src/controllers/sms.mjs';
-import monitoringRoutes from './src/controllers/monitoring.mjs';
+import smsRoutes from './controllers/sms.mjs';
+import monitoringRoutes from './controllers/monitoring.mjs';
 
 const authentication = expressBasicAuth({
   users: config.api_users,
@@ -65,7 +65,7 @@ const options = {
       }
     ]
   },
-  apis: ['./src/controllers/*']
+  apis: ['./controllers/*']
 };
 
 const specs = swaggerJsdoc(options);
